@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/cdk/overlay-prebuilt.css';
 
 :root {
     --color-primary: #7380ec;
@@ -25,7 +26,6 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
-
 *{
     margin: 0;
     padding: 0;
@@ -35,6 +35,7 @@
 body{
     position: relative;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #f4f7fa;
 }
 
 .card {
@@ -44,6 +45,7 @@ body{
     background-color: #fff;
     box-shadow: 0 .25rem .5rem #e6edef;
     margin: 1.25rem 0 1.25rem 0;
+    color: #495057;
 
     .card-head {
         padding: 1rem 1.5rem;

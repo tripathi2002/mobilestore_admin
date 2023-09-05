@@ -14,6 +14,12 @@ import { PagesComponent } from './pages/pages.component';
 import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 import { HeaderComponent } from './header/header.component';
 
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
+import { LoginComponent } from './user/login/login.component';
+import { CreateComponent } from './user/create/create.component';
+import { ListComponent } from './user/list/list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +31,16 @@ import { HeaderComponent } from './header/header.component';
     PagesComponent,
     SublevelMenuComponent,
     HeaderComponent,
+    LoginComponent,
+    CreateComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OverlayModule,
+    CdkMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
