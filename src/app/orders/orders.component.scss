@@ -1,0 +1,49 @@
+
+/*  ================= Recent Orders ======================= */
+.recent-orders {
+    margin-top: 2rem;
+
+    h2 {
+        margin-top: 0,8rem;
+    }
+
+    table {
+        background: var(--color-white);
+        width: 100%;
+        border-radius: var(--card-border-radius);
+        padding: var(--card-padding);
+        text-align: center;
+        box-shadow: var(--box-shadow);
+        transition: all 300ms ease;
+    }
+
+    a {
+        text-align: center;
+        display: block;
+        margin: 1rem auto;
+        color: var(--color-primary);
+    }
+}
+ 
+
+.recent-orders {
+    table:hover {
+        box-shadow: none;
+    }
+}
+
+table {
+    tbody{
+        td{
+
+            height: 2.8rem;
+            border-bottom: 1px solid var(--color-light);
+            color: var(--color-dark-variant);
+        }
+    }
+    tr:last-child {
+        td {
+            border: none;
+        }
+    }
+}

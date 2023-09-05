@@ -5,14 +5,25 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { CoupensComponent } from './coupens/coupens.component';
 import { SettingComponent } from './setting/setting.component';
+import { PagesComponent } from './pages/pages.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   {path:'', component:DashboardComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'products', component:ProductsComponent, pathMatch:'full'},
+
+  {
+    path:'products', 
+    loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+  },
+  {
+    path:'coupens', 
+    loadChildren: () => import('./coupens/coupens.module').then(m => m.CoupensModule)
+  },
   {path:'statistics', component:StatisticComponent, pathMatch:'full'},
-  {path:'coupens', component:CoupensComponent, pathMatch:'full'},
   {path:'setting', component:SettingComponent, pathMatch:'full'},
+  {path:'pages', component:PagesComponent, pathMatch:'full'},
+  {path:'orders', component:OrdersComponent, pathMatch:'full'},
 ];
 
 @NgModule({

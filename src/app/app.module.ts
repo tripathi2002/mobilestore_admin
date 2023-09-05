@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
 import { StatisticComponent } from './statistic/statistic.component';
-import { CoupensComponent } from './coupens/coupens.component';
 import { SettingComponent } from './setting/setting.component';
+import { OrdersComponent } from './orders/orders.component';
+import { PagesComponent } from './pages/pages.component';
+import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,11 @@ import { SettingComponent } from './setting/setting.component';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
-    CoupensComponent,
     SettingComponent,
-    // ProductsComponent,
-    // StatisticComponent
+    OrdersComponent,
+    PagesComponent,
+    SublevelMenuComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
