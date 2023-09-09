@@ -3,17 +3,11 @@
         <div class="head-content-left">
             <div class="search-container">
                 <div *ngIf="!canShowSearchAsOverlay" class="normal-search">
-                    <input type="search" 
-                        class="search"
-                        placeholder="Search..."
-                        >
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="search" class="search" placeholder="Search...">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 </div>
                 <div *ngIf="canShowSearchAsOverlay">
-                    <button
-                        [cdkMenuTriggerFor]="searchOverlay"
-                        class="search-menu-btn ripple"
-                    >
+                    <button [cdkMenuTriggerFor]="searchOverlay" class="search-menu-btn ripple">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
                     </button>
                 </div>
@@ -22,9 +16,7 @@
         <div class="head-content-right">
             <div class="head-menu">
                 <div class="head-menu-item">
-                    <button class="head-menu-item-btn ripple"
-                        [cdkMenuTriggerFor]="languageOverlay"
-                    >
+                    <button class="head-menu-item-btn ripple" [cdkMenuTriggerFor]="languageOverlay">
                         <img [src]="'assets/flags/'+ selectedLanguage.flag +'.jpg'" alt="flag" class="flag">
                     </button>
                 </div>
@@ -39,17 +31,14 @@
                     </button>
                 </div>
                 <div class="head-menu-item">
-                    <button class="head-menu-item-btn ripple" 
-                    >
+                    <button class="head-menu-item-btn ripple">
                         <i class="far fa-comment-alt menu-icon"></i>
                     </button>
                 </div>
 
             </div>
-            <div class="head-user-avatar-container" >
-                <div class="head-user-avatar"
-                    [cdkMenuTriggerFor]="userOverlay"
-                >
+            <div class="head-user-avatar-container">
+                <div class="head-user-avatar" [cdkMenuTriggerFor]="userOverlay">
                     <img src="../../assets/flags/user-icon.jpg" alt="user" class="user-avatar">
                     <div class="circle-indicator pluse"></div>
                 </div>
@@ -81,8 +70,15 @@
 <ng-template #userOverlay>
     <div class="overlay overlay-user overlay-fall" cdkMenu>
         <ul>
-            <li *ngFor="let item of userItems"> 
-                <a class="icon" [ngClass]="item.icon">
+            <li *ngFor="let item of userItems">
+
+                <a [routerLink]="item.routeLink" *ngIf="item.type=='a'" cdkMenuItem>
+                    <i class="icon" [ngClass]="item.icon"></i>
+                    <span>{{item.label}}</span>
+                </a>
+
+                <a cdkMenuItem *ngIf="item.type=='b'" (click)="openDialog()">
+                    <i class="icon" [ngClass]="item.icon"></i>
                     <span>{{item.label}}</span>
                 </a>
             </li>

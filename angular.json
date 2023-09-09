@@ -93,6 +93,8 @@
               "browserTarget": "mobilestore-admin:build:development"
             }
           },
+          "options": {
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

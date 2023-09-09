@@ -20,6 +20,14 @@ const routes: Routes = [
     path:'coupens', 
     loadChildren: () => import('./coupens/coupens.module').then(m => m.CoupensModule)
   },
+  {
+    path:'user', 
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+  },
+  { 
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
+  },
   {path:'statistics', component:StatisticComponent, pathMatch:'full'},
   {path:'setting', component:SettingComponent, pathMatch:'full'},
   {path:'pages', component:PagesComponent, pathMatch:'full'},

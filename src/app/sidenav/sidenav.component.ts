@@ -1,26 +1,13 @@
 import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
-import { trigger, transition, style, animate, keyframes } from '@angular/animations';
-import { navbarData } from '../interfaces/navdata';
-import { SideNavToggle } from '../interfaces/side-nav-toggle';
-import { ItemsNavbarData, fadeInOut } from '../interfaces/items-navbar-data';
+import { fadeInOut, navbarData, rotate } from './data/sideNavbar.data';
 import { Router } from '@angular/router';
+import { ItemsNavbarData, SideNavToggle } from './data/interface';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
-  animations: [
-    fadeInOut,
-    trigger('rotate', [
-      transition(':enter', [
-        animate('1050ms',
-          keyframes([
-            style({ transform: 'rotate(0deg)', offset: '0'}),
-            style({ transform: 'rotate(1turn)', offset: '1'})
-          ]))
-      ])
-    ])
-  ]
+  animations: [ fadeInOut, rotate ]
 })
 export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();

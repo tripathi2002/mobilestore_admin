@@ -25,23 +25,3 @@ export const notifications = [
         description: 'Congratulation our team is incresing fastly'
     }
 ]
-
-export const userItems = [
-
-    {
-        icon: 'fa-regular fa-id-card',
-        label: 'profile'
-    },
-    {
-        icon: 'fa-solid fa-gears',
-        label: 'settings'
-    },
-    {
-        icon: 'fa-thin fa-right-to-bracket',
-        label: 'logout'
-    },
-    {
-        icon: '',
-        label: ''
-    },
-]

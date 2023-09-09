@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations'
-import { ItemsNavbarData, fadeInOut } from '../interfaces/items-navbar-data';
 import { Router } from '@angular/router';
+import { fadeInOut, subMenu } from './data/sideNavbar.data';
+import { ItemsNavbarData } from './data/interface';
 
 @Component({
   selector: 'app-sublevel-menu',
@@ -48,21 +48,7 @@ import { Router } from '@angular/router';
     </ul>
   `,
   styleUrls: ['./sidenav.component.scss'],
-  animations:[
-    fadeInOut,
-    trigger('submenu', [
-      state('hidden', style({
-        height:'0',
-        overflow: 'hidden'
-      })),
-      state('visible', style({
-        height:'*'
-      })),
-      transition('visible <=> hidden', [style({overflow: 'hidden'}),
-      animate('{{transitionParams}}')]),
-      transition('void => *', animate(0))
-    ])
-  ]
+  animations:[ fadeInOut, subMenu ]
 })
 export class SublevelMenuComponent {
 
