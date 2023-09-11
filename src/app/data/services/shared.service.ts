@@ -25,14 +25,7 @@ export class SharedService {
         label: localStorage.getItem('token')?'Log Out':'Log In',
         type: localStorage.getItem('token')?'b':'a'
     },
-    // {
-    //     routeLink:'user/create',
-    //     icon: 'fa fa-right-to-bracket',
-    //     label: 'signin',
-    //     type:'a'
-    // },
-]
-
+  ]
 
   private headerData = new BehaviorSubject<any>(this.userItemsRoute);
   headerData$ = this.headerData.asObservable();

@@ -12,6 +12,8 @@ export class formBase implements TrueFalse {
         title: string, toggel?: boolean){
         this.title = title;
         this.toggle=toggel;
+        this.isError = false;
+        this.message = '';
     }
 
     falseAll(): void {
@@ -23,9 +25,10 @@ export class formBase implements TrueFalse {
         this.isLoading = true;
     }
 
-    trueSuccess():void {
-        this.isError = this.isSuccess = false;
-        this.isLoading = true;
+    trueSuccess(message: string):void {
+        this.isError = this.isLoading = false;
+        this.isSuccess = true;
+        this.message=message;
     }
 
     trueError(message:string):void {

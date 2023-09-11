@@ -30,7 +30,7 @@ export class UserCreateComponent extends formBase {
     password:[''],
     // confirmPassword:[''],
     // address:[''], 
-    role:['user']
+    role:['admin']
   }
   userDetails = this.fb.group(this.data) 
 
@@ -39,19 +39,18 @@ export class UserCreateComponent extends formBase {
     this.us.createUser(this.userDetails.value)
     .subscribe(
       (data)=>{
-        this.trueSuccess();
+        this.trueSuccess("Created User");
         this.message='Congratulation!!';
         setTimeout(function () {
-          this.router.navigateByUrl('login')
+          this.router.navigateByUrl('user/login')
         }.bind(this), 3000);
-      },(error)=>{
-        this.trueError("Unknown Error");
+      },(err)=>{
+        this.trueError(err.error.message);
         this.timelate();
       },()=>{
-        console.log("success");
+        this.userDetails = this.fb.group(this.data);
     })
 
-    this.userDetails = this.fb.group(this.data);
   }
 
   ngOnInit(): void {

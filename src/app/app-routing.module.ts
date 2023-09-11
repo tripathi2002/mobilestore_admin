@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatisticComponent } from './statistic/statistic.component';
-import { CoupensComponent } from './coupens/coupens.component';
 import { SettingComponent } from './setting/setting.component';
 import { PagesComponent } from './pages/pages.component';
 import { OrdersComponent } from './orders/orders.component';

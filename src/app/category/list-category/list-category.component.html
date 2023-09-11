@@ -1,0 +1,43 @@
+<div class="list">
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let base of listFormate">
+                    {{base.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of lists; let i = index">
+                <td *ngFor="let base of listFormate">
+                    <ng-container [ngTemplateOutlet]="base.outlet === 1 ? first 
+                        :(base.outlet === 2 ? second 
+                        : (base.outlet===3?third:(base.outlet===3?fourth:fifth)))" 
+                        [ngTemplateOutletContext]="{list, base, i}">
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template let-i="i" #first>
+    <div>{{i+1}}</div>
+</ng-template>
+
+<ng-template let-list="list" #second>
+    {{list.title}}
+</ng-template>
+
+<ng-template let-list="list" #third>
+    <img [src]="list.url" alt="img">
+</ng-template>
+
+<ng-template let-list="list" #fourth>
+    <a onUploadImage>upload</a>
+</ng-template>
+<ng-template let-list="list"let-base='base' #fifth>
+<a (click)="onUpdate(list.id)"><i class="{{base.lable1}}"></i></a>
+<i class="fa-solid fa-slash fa-rotate-90"></i>
+<a (click)="onDelete(list._id)"><i class="{{base.lable2}}"></i></a>
+</ng-template>

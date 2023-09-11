@@ -3,7 +3,7 @@ import { languages, } from './data/header-data';
 import { Router } from '@angular/router';
 import { Dialog } from '@angular/cdk/dialog';
 import { LogOutComponent } from '../user/log-out/log-out.component';
-import { SharedService } from '../user/data/shared.service';
+import { SharedService } from '../data/services/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -36,9 +36,7 @@ export class HeaderComponent implements OnInit {
     this.selectedLanguage = this.languages[0];
 
     this.sharedService.headerData$.subscribe((data)=>{
-      console.log(data);
       this.userItems = data;
-    
     })
   }
 

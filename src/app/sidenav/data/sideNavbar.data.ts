@@ -63,7 +63,12 @@ export const navbarData: ItemsNavbarData[] = [
     },
     {
         routeLink: 'category',
-        icon: '',
+        icon: 'fa-solid fa-cubes-stacked',
+        label: 'Category',
+    },
+    {
+        routeLink: 'category',
+        icon: 'fa-solid fa-cubes-stacked',
         label: 'Category',
         items: [
             {
@@ -71,8 +76,8 @@ export const navbarData: ItemsNavbarData[] = [
                 label: 'Category List',
             },
             {
-                routeLink: 'category/create',
-                label: 'Create Category',
+                routeLink: 'category/add',
+                label: 'Add Category',
             }
         ]
     },

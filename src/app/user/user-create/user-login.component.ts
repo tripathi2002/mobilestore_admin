@@ -4,7 +4,7 @@ import { UserService } from '../data/user.service';
 import { User } from '../data/user.interface';
 import { Router } from '@angular/router';
 import { loginData, loginFormate } from '../data/user.data';
-import { SharedService } from '../data/shared.service';
+import { SharedService } from '../../data/services/shared.service';
 import { formBase } from 'src/app/data/class';
 import { error, loading, success } from 'src/app/data/data';
 
@@ -25,7 +25,10 @@ export class UserLoginComponent extends formBase {
       super('SignIn', false);
      }
 
-  data = loginData;
+  data = {
+    email:[''],
+    password:[''],
+  };
 
   userDetails = this.fb.group(this.data);
 
@@ -34,8 +37,7 @@ export class UserLoginComponent extends formBase {
     this.us.LoginUser(this.userDetails.value)
     .subscribe(
       (data: User)=>{
-        this.trueSuccess();
-        this.message='Successfully login'
+        this.trueSuccess('Login Successfully');
         this.timelate();
         if(data.token){
           for(const key in data){
@@ -48,14 +50,13 @@ export class UserLoginComponent extends formBase {
           }.bind(this), 3000);
           
           
-      },(error)=>{
-        this.trueError("Unknown Error");
+      },(err)=>{
+        this.trueError(err.error.message);
         this.timelate();
       },()=>{
-        console.log("success");
+        this.userDetails = this.fb.group(this.data);
     })
 
-    this.userDetails = this.fb.group(this.data);
   }
 
 }

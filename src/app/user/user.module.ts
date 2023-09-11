@@ -13,7 +13,6 @@ import { UserLoginComponent } from './user-create/user-login.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
 import { UserService } from './data/user.service';
-import { Injector } from './data/constants.injectables';
 import { LogOutComponent } from './log-out/log-out.component';
 
 
@@ -34,7 +33,6 @@ import { LogOutComponent } from './log-out/log-out.component';
   ],
   providers: [
     UserService,
-    Injector,
   ]
 })
 export class UserModule { }

@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { DialogModule } from '@angular/cdk/dialog';
+import { Injector } from './data/constants.injectables';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,13 @@ import { DialogModule } from '@angular/cdk/dialog';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    OverlayModule,
     CdkMenuModule,
     DialogModule,
+    OverlayModule,
   ],
-  providers: [],
+  providers: [
+    Injector,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
