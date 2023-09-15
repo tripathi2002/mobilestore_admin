@@ -20,17 +20,6 @@ export const categoryListFormat = [
         outlet:2,
 
     },
-    // {
-    //     title: 'Image',
-    //     type:"src",
-    //     outlet:3,
-
-    // },
-    // {
-    //     title: 'Upload',
-    //     type:'btn',
-    //     outlet:4,
-    // },
     {
         title:"Update/Delete",
         lable1:'fa-solid fa-pen-to-square',
@@ -38,11 +27,35 @@ export const categoryListFormat = [
         type:"btn",
         outlet:5,
     },
-    // {
-    //     title:"Update",
-    //     type:"btn"
-    // },
-    // {
-    //     title:'Delete'
-    // }
+]
+
+export const brandCreateFormate= [
+    {
+        placeholder:"Brand Name",
+        type:'text',
+        for:'brandName',
+        name:'title',
+        id:'brandName',
+    },
+];
+
+export const brandListFormat = [
+    {
+        title:"SNo",
+        type:"number",
+        outlet:1
+    },
+    {
+        title: "title",
+        type:'',
+        outlet:2,
+
+    },
+    {
+        title:"Update/Delete",
+        lable1:'fa-solid fa-pen-to-square',
+        lable2:'fa-solid fa-trash',
+        type:"btn",
+        outlet:5,
+    },
 ]

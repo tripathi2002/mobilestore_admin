@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from '../data/category.service';
-import { categoryListFormat } from '../data/category.data';
+import { CategoryService } from '../services/category.service';
+import { categoryListFormat } from '../data/data';
 import { Dialog } from '@angular/cdk/dialog';
-import { DeleteCategoryComponent } from '../delete-category.component';
+import { DeleteCategoryComponent } from './delete-category.component';
 
 @Component({
-  selector: 'app-list-category',
-  templateUrl: './list-category.component.html',
-  styleUrls: ['./list-category.component.scss']
+  selector: 'app-category-list',
+  templateUrl: '../pages/list.component.html',
+  styleUrls: ['../styles/list.component.scss']
 })
 export class ListCategoryComponent implements OnInit {
   listFormate = categoryListFormat;
@@ -22,7 +22,6 @@ export class ListCategoryComponent implements OnInit {
     private categoryService:CategoryService,
     private dialog: Dialog
   ){  }
-  
 
   getAll(){
     this.categoryService.all()

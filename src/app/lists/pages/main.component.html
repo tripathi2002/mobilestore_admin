@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="top">
+        <div class="top-left">
+            <div class="top-left-title">
+                {{title}}
+            </div>
+        </div>
+        <div class="top-right">
+            <button class="top-right-btn btn" (click)="onAdd()">Add</button>
+        </div>
+    </div>
+    <div class="main">
+        <ng-container [ngTemplateOutlet]="listTemp==='category'?category
+            :(listTemp==='brand'?brand:notFound)"
+        >
+        </ng-container>
+    </div>
+</div>
+
+
+<ng-template #category>
+    <app-category-list></app-category-list>
+</ng-template>
+
+<ng-template #brand>
+    <app-brand-list></app-brand-list>
+</ng-template>
+
+<ng-template #notFound>
+    <div>not found </div>
+</ng-template>

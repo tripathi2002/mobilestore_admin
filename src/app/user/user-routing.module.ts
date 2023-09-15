@@ -9,7 +9,6 @@ const routes: Routes = [
   {path: '', component:UserComponent},
   {path: 'create', component:UserCreateComponent},
   {path: 'login', component:UserLoginComponent},
-  // {path: 'logout', component:LogOutComponent},
   {path: 'detail', component:UserDetailComponent},
 ];
 

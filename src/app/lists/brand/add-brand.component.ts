@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
-import { error, loading, success } from 'src/app/data/data';
-import { categoryCreateFormate } from '../data/category.data';
 import { formBase } from 'src/app/data/class';
+import { error, loading, success } from 'src/app/data/data';
+import { brandCreateFormate } from '../data/data';
 import { FormBuilder } from '@angular/forms';
 import { DialogRef } from '@angular/cdk/dialog';
-import { CategoryService } from '../data/category.service';
+import { BrandService } from '../services/brand.service';
 
 @Component({
-  selector: 'app-add-category',
-  templateUrl: 'add-category.component.html',
-  styleUrls: ['./add-category.component.scss', '../../data/styles/form.scss'],
-  animations: [error, success, loading]
+  selector: 'app-add-brand',
+  templateUrl: '../pages/add.component.html',
+  styleUrls: ['../styles/add.component.scss', '../../data/styles/form.scss'],
+  animations: [error, success, loading],
 })
-export class AddCategoryComponent extends formBase {
-  base = categoryCreateFormate;
+export class AddBrandComponent extends formBase{
+  base = brandCreateFormate;
 
   constructor(
     private fb:FormBuilder,
     private dialogRef: DialogRef,
-    private categoryService: CategoryService
-  ) {
-    super('Add Category', );
+    private bs:BrandService 
+  ){
+    super('Add Brand');
   }
 
   data = {
@@ -30,11 +30,13 @@ export class AddCategoryComponent extends formBase {
   details = this.fb.group(this.data);
 
   onSubmit(){
+    console.log("1");
     this.trueLoading();
-    this.categoryService.add(this.details.value)
+    this.bs.add(this.details.value)
       .subscribe((res)=>{
+        console.log(res);
         this.trueSuccess('Added Successfully');
-        this.categoryService.pushList();
+        this.bs.pushList();
         setTimeout(function(){
           this.dialogRef.close();
         }.bind(this), 2000)
@@ -49,5 +51,4 @@ export class AddCategoryComponent extends formBase {
   onClose(){
     this.dialogRef.close();
   }
-
 }

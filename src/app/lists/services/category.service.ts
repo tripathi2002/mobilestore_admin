@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { BASE_URL } from 'src/app/data/constants.injectables';
-import { list } from './interface';
+
 
 @Injectable()
 export class CategoryService {

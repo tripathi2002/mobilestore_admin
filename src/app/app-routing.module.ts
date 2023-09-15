@@ -22,9 +22,9 @@ const routes: Routes = [
     path:'user', 
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
-  { 
-    path: 'category',
-    loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
+  {
+    path:'list',
+    loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule)
   },
   {path:'statistics', component:StatisticComponent, pathMatch:'full'},
   {path:'setting', component:SettingComponent, pathMatch:'full'},

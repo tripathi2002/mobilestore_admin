@@ -62,25 +62,30 @@ export const navbarData: ItemsNavbarData[] = [
         ]
     },
     {
-        routeLink: 'category',
+        routeLink: 'list/category',
         icon: 'fa-solid fa-cubes-stacked',
         label: 'Category',
     },
     {
-        routeLink: 'category',
-        icon: 'fa-solid fa-cubes-stacked',
-        label: 'Category',
-        items: [
-            {
-                routeLink: 'category/list',
-                label: 'Category List',
-            },
-            {
-                routeLink: 'category/add',
-                label: 'Add Category',
-            }
-        ]
+        routeLink: 'list/brand',
+        icon: 'fa-solid fa-layer-group',
+        label: 'Brand',
     },
+    // {
+    //     routeLink: 'category',
+    //     icon: 'fa-solid fa-cubes-stacked',
+    //     label: 'Category',
+    //     items: [
+    //         {
+    //             routeLink: 'category/list',
+    //             label: 'Category List',
+    //         },
+    //         {
+    //             routeLink: 'category/add',
+    //             label: 'Add Category',
+    //         }
+    //     ]
+    // },
     {
         routeLink: 'statistics',
         icon: 'fa fa-chart-bar',
