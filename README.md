@@ -1,27 +1,48 @@
-# MobilestoreAdmin
+# Mobile Store Admin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+Angular admin panel for a mobile phone store. Admins manage products, categories, brands, coupons, orders and users from a sidebar dashboard backed by a REST API.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Dashboard and statistics pages
+- Product create and list
+- Category and brand management (add, list, update, delete)
+- Coupon create and list
+- Orders, users, pages and settings sections
+- Lazy-loaded feature modules (lists, coupons, products)
 
-## Code scaffolding
+## Tech stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 16 · TypeScript · RxJS · SCSS · Angular CDK
 
-## Build
+## Project structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/app/dashboard/     # dashboard
+src/app/products/      # product create/list + service
+src/app/lists/         # brand & category CRUD
+src/app/coupens/       # coupon create/list
+src/app/orders/, pages/, header/, body/
+src/app/data/          # shared models, constants, styles, shared.service
+```
 
-## Running unit tests
+## Getting started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start          # http://localhost:4200
+npm run build
+```
 
-## Running end-to-end tests
+The app expects a backend at `http://127.0.0.1:1000/v3/api` (set in the app's constants).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Environment variables
 
-## Further help
+None. The API base URL is hard-coded in the source.
+## Screenshots
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_Screenshots coming soon._
+
+## License
+
+No license file has been added to this repository yet.
